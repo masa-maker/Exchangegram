@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>ログイン画面</title>
 </head>
-<%@include file="WEB-INF/css/index.css" %>
+<%@include file="/css/index.css" %>
 <body>
 	<div class="container">
 		<h1>Exchangegram</h1>

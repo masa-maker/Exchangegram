@@ -10,20 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.LoginLogic;
-import model.User;
-
 /**
- * Servlet implementation class Login
+ * Servlet implementation class Logout
  */
-@WebServlet("/Login")
-public class Login extends HttpServlet {
+@WebServlet("/Logout")
+public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public Logout() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,8 +29,14 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//セッションスコープを破棄
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		//ログアウト画面にフォワード
+		RequestDispatcher dispatcher =
+				request.getRequestDispatcher("/index.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -41,32 +44,7 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		String name = request.getParameter("name");
-		String pass= request.getParameter("pass");
-		
-		
-		//Userインスタンスを生成
-		User user = new User(name, pass);
-		
-		//ログイン処理
-		LoginLogic login = new LoginLogic();
-		boolean isLogin = login.execute(user);
-	
-		if (isLogin) {
-			HttpSession session = request.getSession();
-			session.setAttribute("loginUser", user);
-			RequestDispatcher dispatcher =
-					request.getRequestDispatcher(
-							"/WEB-INF/jsp/main.jsp");
-			dispatcher.forward(request, response);
-		} else {
-			RequestDispatcher dispatcher =
-					request.getRequestDispatcher(
-							"/index.jsp");
-			dispatcher.forward(request, response);
-		}
-
+		doGet(request, response);
 	}
 
 }

@@ -1,0 +1,15 @@
+<style type="text/css">
+<!--
+@charset "UTF-8";
+
+.container {
+	width:400px;
+	height:400px;
+	margin: 0 auto;
+    background: linear-gradient(-135deg, #E4A972, #9941D8);
+	text-align:center;
+	border-radius:4px;
+	color:#333;
+}
+
+</style>

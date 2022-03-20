@@ -10,7 +10,7 @@ User loginUser = (User) session.getAttribute("loginUser");
 <meta charset="UTF-8">
 <title>投稿一覧</title>
 </head>
-<%@include file="WEB-INF/css/index.css" %>
+<%@include file="/css/main.css" %>
 <body>
 <header>
 	<h1 class="title">Exchangeglam</h1>
@@ -18,12 +18,14 @@ User loginUser = (User) session.getAttribute("loginUser");
 		<ul class="menu-group">
 			<li class="menu-item"><%= loginUser.getName() %></li>
 			<li class="menu-item"><a href="#">Mypage</a></li>
-			<li class="menu-item"><a href="#">Logout</a></li>
+			<li class="menu-item"><a href="/Exchangegram/Logout">Logout</a></li>
 		</ul>
 	</nav>
 </header>
-<div class="main-wrapper">
-</div>
+<main>
+	<div class="main-wrapper">
+	</div>
+</main>>
 <footer>
 <p class= "footer-title">xxxxxxxxxxxxxxx</p>
 </footer>
