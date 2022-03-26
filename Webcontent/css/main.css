@@ -44,6 +44,13 @@ footer {
 .main-wrapper {
 	width:100%;
 	height:100% - 200px;
+	padding-top: 100px;
 }
+.mutterbox {
+	display:inline-block;
+	border:solid 3px #9941D8;
+	padding:10px 10px;
+}
+
 
 </style>
