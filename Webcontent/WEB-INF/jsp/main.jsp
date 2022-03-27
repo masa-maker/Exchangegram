@@ -19,26 +19,29 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 	<h1 class="title">Exchangeglam</h1>
 	<nav class="nav">
 		<ul class="menu-group">
-			<li class="menu-item"><%= loginUser.getName() %></li>
-			<li class="menu-item"><a href="#">Mypage</a></li>
+			<li class="menu-item"><a href="#"><%= loginUser.getName() %></a></li>
 			<li class="menu-item"><a href="/Exchangegram/Logout">Logout</a></li>
 		</ul>
 	</nav>
 </header>
 <main>
 	<div class="main-wrapper">
-	<p><a href="/Exchangegram/Main">更新</a></p>
-	<form action="/Exchangegram/Main" method="post">
-	<input type="text" name="text">
-	<input type="submit" value="送信">
-	</form>
-
-		<% if(errorMsg != null) { %>
-		<p><%= errorMsg %></p>
-		<% } %>
-		<% for (Mutter mutter : mutterList) { %>
-			<p class="mutterbox"> <%= mutter.getUserName() %>:<%= mutter.getText() %> </p><br>
-		<% } %>
+	<div class="postbox">
+		<form action="/Exchangegram/Main" method="post">
+		<input type="text" name="text" placeholder="Exchangegram⇨" class="text">
+		<input type="submit" value="送信" class="button">
+		</form>
+	</div>
+	<div class=mutter-wrapper>
+		<div class="mutterbox">
+			<% if(errorMsg != null) { %>
+			<p><%= errorMsg %></p>
+			<% } %>
+			<% for (Mutter mutter : mutterList) { %>
+				<p class="mutterli"> <%= mutter.getUserName() %>:<%= mutter.getText() %> </p><br>
+			<% } %>
+		</div>
+	</div>
 	</div>
 </main>
 <footer>

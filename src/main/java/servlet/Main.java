@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -36,6 +35,7 @@ public class Main extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/**
 		ServletContext application = this.getServletContext();
 		List<Mutter> mutterList =
 				(List<Mutter>) application.getAttribute("mutterlist");
@@ -58,6 +58,7 @@ public class Main extends HttpServlet {
 					request.getRequestDispatcher("WEB-INF/jsp/main.jsp");
 			dispatcher.forward(request, response);
 		}
+		**/
 	}
 
 	/**
