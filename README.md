@@ -23,3 +23,4 @@
 - マイページの作成。
 - チャット投稿機能を非同期通信で行う
 
+![c39d62dba3aba83bdbede99e550ddc12](https://user-images.githubusercontent.com/76035698/160718329-d48adfa4-b8d3-408c-a455-25f3fd1b5403.gif)
